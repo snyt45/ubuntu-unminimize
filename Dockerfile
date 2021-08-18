@@ -22,7 +22,7 @@ RUN yes | unminimize
 # ユーザー作成
 ARG USER=snyt45
 ARG PASS=password
-RUN useradd -m ${USER}
+RUN useradd -m ${USER} -s /bin/bash
 # ユーザーをsudoグループに追加
 RUN gpasswd -a ${USER} sudo
 # ユーザーのパスワード設定
