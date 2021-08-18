@@ -27,4 +27,9 @@ RUN useradd -m ${USER}
 RUN gpasswd -a ${USER} sudo
 # ユーザーのパスワード設定
 RUN echo "${USER}:${PASS}" | chpasswd
+# wsl起動時のデフォルトユーザー設定
+RUN { \
+        echo "[user]"; \
+        echo "default=${USER}"; \
+    } > /etc/wsl.conf
 USER ${USER}
