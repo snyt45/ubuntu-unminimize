@@ -16,7 +16,8 @@ RUN apt install -y tzdata
 RUN apt install -y vim \
                    sudo \
                    git \
-                   man
+                   man \
+                   make
 # Unminimize
 RUN yes | unminimize
 # ユーザー作成
