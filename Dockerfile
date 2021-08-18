@@ -19,3 +19,12 @@ RUN apt install -y vim \
                    man
 # Unminimize
 RUN yes | unminimize
+# ユーザー作成
+ARG USER=snyt45
+ARG PASS=password
+RUN useradd -m ${USER}
+# ユーザーをsudoグループに追加
+RUN gpasswd -a ${USER} sudo
+# ユーザーのパスワード設定
+RUN echo "${USER}:${PASS}" | chpasswd
+USER ${USER}
