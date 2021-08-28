@@ -17,7 +17,8 @@ RUN apt install -y vim \
                    sudo \
                    git \
                    man \
-                   make
+                   make \
+                   curl
 # Unminimize
 RUN yes | unminimize
 # ユーザー作成
