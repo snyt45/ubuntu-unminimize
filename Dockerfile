@@ -1,6 +1,12 @@
 FROM ubuntu:20.04
 # aptの高速化
 RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list
+# add-apt-repositoryコマンドを使えるようにする
+# TODO: 依存関係を減らすために下記URLを参考にしたい
+# https://www.usagi1975.com/2019152355/
+RUN apt install -y software-properties-common
+# vimのリポジトリ追加
+RUN add-apt-repository ppa:jonathonf/vim
 # パッケージ一覧の更新
 RUN apt update
 # ロケールを日本語に設定
