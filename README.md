@@ -1,14 +1,16 @@
 # ubuntu-unminimize
-## 使い方
+## Usage
 
-### build
-`--build-arg`を指定しない場合、デフォルトでユーザ名がsnyt45、パスワードがpasswordのユーザーが作成されます。
+### docker build
+指定した引数でユーザー名とパスワードが作成されます。
+※必ずUSERとPASSの引数を渡す必要があります。
+
 ```
 docker build -t ubuntu-unminimize . --build-arg USER=user --build-arg PASS=password
 ```
 
-### run
+### docker run
 
 ```
-docker run -it ubuntu-unminimize /bin/bash
+docker run --rm -it ubuntu-unminimize /bin/bash
 ```
